@@ -33,6 +33,9 @@ def main():
         # Input Method 2: File Upload
         uploaded_file = st.file_uploader("Or drop a PDF file", type=["pdf"])
         
+        # Translation Toggle
+        enable_translation = st.checkbox("Translate Abstract with Gemini", value=True)
+        
         if st.button("Fetch & Save"):
             target_input = None
             temp_path = None
@@ -71,11 +74,14 @@ def main():
                         abstract = metadata.get('abstract', '')
                         translation = ""
                         if abstract:
-                            with st.spinner("Translating Abstract..."):
-                                translation = translate_abstract(abstract)
-                            st.write("### Translated Abstract")
-                            with st.expander("Show Translation"):
-                                st.write(translation)
+                            if enable_translation:
+                                with st.spinner("Translating Abstract..."):
+                                    translation = translate_abstract(abstract)
+                                st.write("### Translated Abstract")
+                                with st.expander("Show Translation"):
+                                    st.write(translation)
+                            else:
+                                st.info("Translation skipped.")
                         
                         with st.spinner("Saving to Notion..."):
                             page_url = create_notion_page(metadata, translation)

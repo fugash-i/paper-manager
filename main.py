@@ -17,6 +17,9 @@ def main():
     parser.add_argument("--export", help="Export papers with this 'cite key' from Notion.")
     parser.add_argument("--format", choices=['nat', 'bib'], default='nat', help="Export format: 'nat' (Nature-style) or 'bib' (BibTeX). Default: nat.")
     parser.add_argument("--output", help="Path to save the exported file (e.g., output.rtf or output.bib). If not provided, prints to stdout.")
+    
+    # Translation options
+    parser.add_argument("--no-translate", action="store_true", help="Skip automatic translation of the abstract.")
 
     args = parser.parse_args()
 
@@ -97,9 +100,12 @@ def main():
     abstract = metadata.get('abstract', '')
     translation = ""
     if abstract:
-        print("Translating abstract (this may take a moment)...")
-        translation = translate_abstract(abstract)
-        print("Translation completed.")
+        if args.no_translate:
+            print("Skipping translation as requested.")
+        else:
+            print("Translating abstract (this may take a moment)...")
+            translation = translate_abstract(abstract)
+            print("Translation completed.")
     else:
         print("No abstract found to translate.")
 
