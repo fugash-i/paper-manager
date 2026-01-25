@@ -1,0 +1,26 @@
+# Environment Variables (Secrets)
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+
+# Environments
+.venv/
+.conda/
+env/
+
+# Mac OS
+.DS_Store
+
+# Pytest
+.pytest_cache/
+tests/
+pytest.ini
+
+# Debug & Dev Scripts
+debug_scripts/
+
+# Streamlit
+.streamlit/
