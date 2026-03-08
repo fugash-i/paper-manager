@@ -1,4 +1,4 @@
-# Paper Manager v1.0
+# Paper Manager v1.1
 
 Notionと連携して論文管理を自動化するツールです。
 DOIやPDFからメタデータを取得し、翻訳付きでNotionに追加します。また、Notion上のデータをNatureの引用形式に合わせたtxtファイルやBibTeX形式でエクスポートすることも可能です。
