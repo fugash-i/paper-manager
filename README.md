@@ -46,6 +46,7 @@ EXPORT_DIR=/Users/username/Documents/citation
 
 ### 3. Notionデータベースの準備
 Notionでデータベースを作成し、以下のプロパティ（カラム）を設定してください。
+あるいは, 以下の[リンク](https://www.notion.so/31d834ce8c7d801fa7d6edd236c08e8d?v=31d834ce8c7d8175a337000ccde6ade0&source=copy_link)からページテンプレートをコピーしてください. 
 ※プロパティ名は大文字小文字を含めて正確に合わせてください。
 
 | プロパティ名 | 種類 (Type) | 備考 |
